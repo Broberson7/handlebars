@@ -1,0 +1,79 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>NSS Starter Kit - Handlebars</title>
+</head>
+
+<body>
+
+  <div id="entryOutput"></div>
+
+  <script id="entry-template" type="text/x-handlebars-template">
+    <div class="entry">
+      <h1>{{title}}</h1>
+      <div class="body">
+        {{body}}
+      </div>
+    </div>
+
+    <ul>
+    {{#each tags}}
+      <li>{{category}}:{{name}}</li>
+      <li><a href="https://www.facebook.com/sybia">{{project}}</a></li>
+    {{/each}}
+    </ul>
+
+
+    {{> tagline }}
+    {{> blog}}
+    {{> artist}}
+    {{>album}}
+    {{>songs}}
+  </script>
+
+  <script id="tagline-partial" type="text/x-handlebars-template">
+    <div class="tagline">
+      <h4>Authored by {{author_first_name}} {{author_last_name}}</h4>
+      <div class="date">{{authored_date}}</div>
+    </div>
+  </script>
+
+  <script id="blog-partial" type="text/x-handlebars-template">
+   <div class="blog">
+    <h1>Blog</h1>
+    {{#each entries}}
+      <h4>{{date}} {{author}} {{text}}</h4>
+    {{/each}}  
+    </div>
+  </script>
+
+  <script id="artist-partial" type="text/x-handlebars-template">
+   <div class="artist">
+    <h1>Artist</h1>
+      <h4>{{name}} {{genre}}</h4>  
+    </div>
+  </script>
+
+  <script id="album-partial" type="text/x-handlebars-template">
+   <div class="album">
+    <h1>Album</h1>
+      <h4>{{name}} {{artist}} {{year}}</h4>  
+    </div>
+  </script>
+
+  <script id="songs-partial" type="text/x-handlebars-template">
+   <div class="songs">
+    <h1>Song</h1>
+      <h4>{{name}} {{album}}</h4> 
+    </div>
+  </script>
+
+
+  <script type="text/javascript" src="lib/bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="lib/bower_components/handlebars/handlebars.min.js"></script>
+  <script type="text/javascript" src="javascripts/main.js"></script>
+
+</body>
+</html>
